@@ -1,6 +1,7 @@
 body {
   --odoSpeed: 2s;
   --colorSpeed: 1s;
+  --color: white;
   --upColor: lime;
   --downColor: red;
 }
@@ -118,24 +119,24 @@ body {
 
 @keyframes up {
   0% {
-    color: white;
+    color: var(--color);
   }
   50% {
     color: var(--upColor);
   }
   100% {
-    color: white;
+    color: var(--color);
   }
 }
 
 @keyframes down {
   0% {
-    color: white;
+    color: var(--color);
   }
   50% {
     color: var(--downColor);
   }
   100% {
-    color: white;
+    color: var(--color);
   }
 }
