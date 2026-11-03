@@ -1,6 +1,6 @@
 body {
   --odoSpeed: 2s;
-  --colorSpeed: 1s;
+  --colorSpeed: calc(var(--odoSpeed) / 2);
   --color: white;
   --upColor: lime;
   --downColor: red;
@@ -73,10 +73,6 @@ body {
   -ms-transition: -ms-transform var(--odoSpeed);
   -o-transition: -o-transform var(--odoSpeed);
   transition: transform var(--odoSpeed);
-  animation-name: up;
-  animation-duration: var(--colorSpeed);
-  animation-iteration-count: 1;
-  /* color: lime; */
 }
 .odometer.odometer-auto-theme.odometer-animating-up.odometer-animating
   .odometer-ribbon-inner,
@@ -111,10 +107,18 @@ body {
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
   transform: translateY(0);
+}
+
+.odometer.odometer-animating-up.odometer-animating {
+  animation-name: up;
+  animation-duration: var(--colorSpeed);
+  animation-iteration-count: 1;
+}
+
+.odometer.odometer-animating-down.odometer-animating {
   animation-name: down;
   animation-duration: var(--colorSpeed);
   animation-iteration-count: 1;
-  /* color: red; */
 }
 
 @keyframes up {
